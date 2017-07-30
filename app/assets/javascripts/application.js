@@ -16,10 +16,17 @@
 //= require material-dashboard
 //= require demo
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
+//= require turbolinks
+
 $(document).ready(function(){
     $('#ajustes').on('click',  function(){
-       $(this).parent().find('ul').removeClass('hidden').stop().slideToggle();
+       $(this).parent().find('ul').removeClass('hidden').stop().slideToggle(250);
+    });
+
+    $('#inventario').on('click',  function(){
+       $(this).parent().find('ul').removeClass('hidden').stop().slideToggle(250);
     });
 });
+    
+

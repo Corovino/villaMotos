@@ -1,0 +1,59 @@
+<%= link_to 'Agregar Producto', products_new_path, class:'btn btn-success' %>
+
+
+<div class="content">
+	            <div class="container-fluid">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="card">
+	                            <div class="card-header" data-background-color="purple">
+	                                <h4 class="title">Productos</h4>
+	                                <p class="category">Here is a subtitle for this table</p>
+	                            </div>
+	                            <div class="card-content table-responsive">
+	                                <table class="table">
+	                                    <thead class="text-primary">
+	                                    	<th>Código</th>
+	                                    	<th>Nombre</th>
+	                                    	<th>Categoria</th>
+											<th>Marca</th>
+											<th>Precio compra</th>
+											<th>Precio venta</th>
+											<th>Cantidad</th>
+											<th>Estado</th>
+											<th>Editar</th>
+											<th>Eliminar</th>
+	                                    </thead>
+	                                    <tbody>
+                                          <% @products.each do |product| %>  
+	                                        <tr>
+	                                        	<td><%=product.codigo %></td>
+												<td><%=product.nombre %></td>
+												<% @category.each do |item|   %>
+													<% if product.id_categoria === item.id %>
+														<td><%= item.nombre%><td>
+													<%end%>		
+												<%end%>
+												<% @brand.each do |item|   %>
+													<% if product.id_marca === item.id %>
+														<td><%= item.nombre%><td>
+													<%end%>		
+												<%end%>
+												<td><%= product.precio_venta %></td>
+												<td><%= product.precio_compra %></td>
+												<td><%= product.cantidad %></td>
+
+												<td><p class="label label-success" ><%= if  !product.estado then "Inactivo" else "activo" end %></p></td>				
+	                                        	<td><%= link_to 'Editar', edit_product_path(product.id) %></td>
+												<td class="text-danger"><%= link_to 'Eliminar', product_path(product), method: :delete, data: {confirm: "Esta seguro de ejecutar la acción?"}  %></td>
+	                                        </tr>
+	                                      <% end %>
+	                                    </tbody>
+	                                </table>
+
+	                            </div>
+	                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

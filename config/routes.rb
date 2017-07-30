@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+  
+  get 'products/index'
+
+  get 'products/new'
+
+  get 'products/show'
+
+  get 'products/edit'
+
+  get 'products/destroy'
+
+  get 'products/update'
+
+  get 'brands/index'
+
+  get 'brands/new'
+
+  get 'brands/show'
+
+  get 'brands/edit'
+
+  get 'brands/update'
+
+  get 'brands/delete'
+
+  get 'brands/create'
+
   get 'categories/new'
 
   get 'categories/create'
@@ -14,6 +41,9 @@ Rails.application.routes.draw do
   get 'categories/show'
 
   get 'dashboard/index'
+
+  resources :products, :categories, :brands 
+
 
   devise_for :users
 

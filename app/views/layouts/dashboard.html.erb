@@ -22,36 +22,63 @@
 
   				<div class="logo">
   					<a href="#" class="simple-text">
-  						Admin Motos
+  						Villa Motos
   					</a>
   				</div>
 
   		    	<div class="sidebar-wrapper">
   		            <ul class="nav">
-  		                <li class="active">
+						<li class="active">
+  		                    <a href="">
+  		                        <i class="material-icons">card travel</i>  
+								<p>Panel Administrativo</p>
+  		                    </a>
+						</li>  
+  		                <li id="inventario">
+  		                    <a id="menuToggle">
+  		                        <i class="material-icons">content_paste</i>
+  		                        <p>Inventario</p>
+							</a>
+							<ul class="nav hidden">
+								<li><%= link_to 'Productos', products_index_path %></li>
+								<li><%= link_to 'Compras'  %></li>
+								<li><%= link_to 'Caja'  %></li>
+								<li><%= link_to 'proveedores'  %></li>
+								
+							</ul>  		
+						</li>
+						<li>
   		                    <a href="#">
-  		                        <i class="material-icons">dashboard</i>
-  		                        <p>Dashboard</p>
+  		                        <i class="material-icons">shopping_cart</i>
+  		                        <p>Ventas</p>
   		                    </a>
   		                </li>
+						<li>
+  		                    <a href="#">
+  		                        <i class="material-icons">shop</i>
+  		                        <p>Cartera</p>
+  		                    </a>
+						</li>
+						<li>
+  		                    <a href="#">
+  		                        <i class="material-icons">description</i>
+  		                        <p>InFormes</p>
+  		                    </a>
+  		                </li>								
   		                <li id="ajustes">
   		                    <a  id="menuToggle" >
-  		                        <i class="material-icons">person</i>
+  		                        <i class="material-icons">build</i>
   		                        <p>Ajustes</p>
 							</a>
-							<ul class="hidden">
-								<li> <%= link_to 'Categorias', categories_new_path %></li>
-								<li>Referencias</li>
-								<li>Marcas</li>
+							<ul class="nav hidden">
+								<li><%= link_to 'Categorias', categories_index_path %></li>
+								<li><%= link_to 'Marcas', brands_index_path %></li>
+								<li><%= link_to 'Roles'  %></li>
+								<li><%= link_to 'Usuarios'  %></li>
+								
 							</ul>						
   		                </li>
-  		                <li >
-  		                    <a href="#">
-  		                        <i class="material-icons">person</i>
-  		                        <p>Inventario</p>
-  		                    </a>
-  		                </li>
-  		                
+
   		            </ul>
   		    	</div>
   		    </div>
@@ -113,8 +140,6 @@
   					    	<%= yield %>
   					    </div>
   							
-
-  						   
   					</div>
   				</div>
 

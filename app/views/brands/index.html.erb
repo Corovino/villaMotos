@@ -1,4 +1,4 @@
-<%= link_to 'Categorias', categories_new_path, class:'btn btn-success' %>
+<%= link_to 'Ingresar Marca', brands_new_path, class:'btn btn-success' %>
 
 
 <div class="content">
@@ -7,7 +7,7 @@
 	                    <div class="col-md-12">
 	                        <div class="card">
 	                            <div class="card-header" data-background-color="purple">
-	                                <h4 class="title">Categorias</h4>
+	                                <h4 class="title">Marcas</h4>
 	                                <p class="category">Here is a subtitle for this table</p>
 	                            </div>
 	                            <div class="card-content table-responsive">
@@ -19,12 +19,12 @@
 											<th>Eliminar</th>
 	                                    </thead>
 	                                    <tbody>
-                                          <% @categories.each do |category| %>  
+                                          <% @brands.each do |brand| %>  
 	                                        <tr>
-	                                        	<td><%=category.codigo %></td>
-	                                        	<td><%=category.nombre %></td>
-	                                        	<td><%= link_to 'Editar', edit_category_path(category.id) %></td>
-												<td class="text-danger"><%= link_to 'Eliminar', category_path(category), method: :delete, data: {confirm: "Esta seguro de ejecutar la acción?"}  %></td>
+	                                        	<td><%=brand.codigo %></td>
+	                                        	<td><%=brand.nombre %></td>
+	                                        	<td><%= link_to 'Editar', edit_brand_path(brand.id) %></td>
+												<td class="text-danger"><%= link_to 'Eliminar', brand_path(brand), method: :delete, data: {confirm: "Esta seguro de ejecutar la acción?"}  %></td>
 	                                        </tr>
 	                                      <% end %>
 	                                    </tbody>

@@ -1,11 +1,11 @@
 <div class="row">
 	 <div class="col-md-12">
-	 <%= link_to 'Categorias Inicio', categories_index_path, class:'btn btn-success' %>	 
-	 <h2>Editar categoria</h2>
-      <%= form_for @category do |f| %>
+	 <%= link_to 'Marca Inicio', brands_index_path, class:'btn btn-success' %>	 
+	 <h2>Editar Marca</h2>
+      <%= form_for @brand do |f| %>
 
-      	 	 <% if @category.errors.any? %>
-      	 	    <%  @category.errors.full_messages.each do |msg| %>
+      	 	 <% if @brand.errors.any? %>
+      	 	    <%  @brand.errors.full_messages.each do |msg| %>
       	 	    	<div class="alert alert-danger"><%= msg %></div>
       	 	    <% end %>
       	 	 <% end %>   

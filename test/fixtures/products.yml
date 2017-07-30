@@ -3,11 +3,19 @@
 one:
   codigo: MyString
   nombre: MyString
-  descripcion: MyText
+  id_categoria: 1
+  id_marca: 1
+  precio_venta: 1
+  precio_compra: 1
+  cantidad: 1
   estado: false
 
 two:
   codigo: MyString
   nombre: MyString
-  descripcion: MyText
+  id_categoria: 1
+  id_marca: 1
+  precio_venta: 1
+  precio_compra: 1
+  cantidad: 1
   estado: false

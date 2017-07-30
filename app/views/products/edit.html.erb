@@ -1,0 +1,53 @@
+<div class="row">
+	 <div class="col-md-12">
+	 <%= link_to 'Productos Inicio', products_index_path, class:'btn btn-success' %>	 
+	 <h2>Imgresar Producto</h2>
+      <%= form_for @product do |f| %>
+
+      	 	 <% if @product.errors.any? %>
+      	 	    <%  @product.errors.full_messages.each do |msg| %>
+      	 	    	<div class="alert alert-danger"><%= msg %></div>
+      	 	    <% end %>
+      	 	 <% end %>   
+
+      	   	<div class="form-group">
+      	 		<%= f.label :codigo  %> <br>
+      	 		<%= f.text_field :codigo, class: 'form-control'  %> <br>
+      	 	</div>
+
+      	 	<div class="form-group">
+      	 		<%= f.label :nombre  %> <br>
+      	 		<%= f.text_field :nombre, class: 'form-control'  %> <br>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :categoria  %> <br> 
+                <%= f.select :id_categoria, Category.all.collect{|x| [x.nombre, x.id]},{:include_blank => 'Seleccione categoria'},  class: 'form-control'  %> <br><br>
+			</div>
+			<div class="form-group">
+                <%= f.label :marca  %> <br> 
+                <%= f.select :id_marca, Brand.all.collect{|x| [x.nombre, x.id]},{:include_blank => 'Seleccione marca'},  class: 'form-control'  %> <br><br>
+	        </div>		
+            <div class="form-group">
+      	 		<%= f.label :precio_compra  %> <br>
+      	 		<%= f.text_field :precio_compra, class: 'form-control'  %> <br>
+			</div>
+			<div class="form-group">
+      	 		<%= f.label :precio_venta  %> <br>
+      	 		<%= f.text_field :precio_venta, class: 'form-control'  %> <br>
+			</div>
+			<div class="form-group">
+      	 		<%= f.label :cantidad  %> <br>
+      	 		<%= f.text_field :cantidad, class: 'form-control'  %> <br>
+			</div>
+			<div class="form-group">	
+				<% f.label :estado %>
+				<%= select(:product, :estado, [['activo', 1], ['inactivo', 2]],{:include_blank => 'Seleccione estado'},  class: 'form-control') %>     				
+			</div>
+
+      	 <%= f.submit "Enviar", class:"btn btn-success"  %>
+      <% end %>
+	
+
+	 </div>	 
+</div>
